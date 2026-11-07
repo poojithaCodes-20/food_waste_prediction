@@ -1,0 +1,144 @@
+{
+ "rows": 5792,
+ "train": 4640,
+ "test": 1152,
+ "cut": "2025-08-09",
+ "waste_models": {
+  "Naive (prepared - 7-day avg)": {
+   "MAE": 14.319444444444445,
+   "RMSE": 19.42179905015679,
+   "R2": 0.2148415326571934
+  },
+  "Linear Regression": {
+   "MAE": 8.994323678771865,
+   "RMSE": 11.922809107339413,
+   "R2": 0.7041063894518917
+  },
+  "Random Forest": {
+   "MAE": 9.126456057025552,
+   "RMSE": 11.976452767038818,
+   "R2": 0.7014378029021608
+  },
+  "Gradient Boosting": {
+   "MAE": 8.919396006227235,
+   "RMSE": 11.708718885735703,
+   "R2": 0.7146373270965842
+  }
+ },
+ "best": "Gradient Boosting",
+ "demand": {
+  "MAE": 10.037391959874038,
+  "RMSE": 13.744003615862333,
+  "R2": 0.8858507557938355
+ },
+ "policy": {
+  "Current practice": {
+   "prepared": 165728,
+   "waste": 31282,
+   "waste_pct": 18.87550685460514,
+   "shortage": 2440,
+   "fill": 98.21749484972896,
+   "waste_cost": 790323.0
+  },
+  "ML + 0% buffer": {
+   "prepared": 136495,
+   "waste": 5593,
+   "waste_pct": 4.097585992160885,
+   "shortage": 5984,
+   "fill": 95.62847917245007,
+   "waste_cost": 143188.0
+  },
+  "ML + 5% buffer": {
+   "prepared": 143300,
+   "waste": 9838,
+   "waste_pct": 6.865317515701326,
+   "shortage": 3424,
+   "fill": 97.49864851043935,
+   "waste_cost": 251156.0
+  },
+  "ML + 10% buffer": {
+   "prepared": 150105,
+   "waste": 15072,
+   "waste_pct": 10.040971320075947,
+   "shortage": 1853,
+   "fill": 98.64631883465073,
+   "waste_cost": 384944.0
+  },
+  "ML + 15% buffer": {
+   "prepared": 156888,
+   "waste": 20973,
+   "waste_pct": 13.368135230227935,
+   "shortage": 971,
+   "fill": 99.29065061437984,
+   "waste_cost": 536147.0
+  }
+ },
+ "chosen": "ML + 10% buffer",
+ "reduction": 51.818937408094115,
+ "reduction_cost": 51.292825844623025,
+ "per_item": [
+  {
+   "item": "Chapati",
+   "w_base": 6289,
+   "w_ml": 3088.0,
+   "reduction_pct": 50.9
+  },
+  {
+   "item": "Chicken Biryani",
+   "w_base": 3175,
+   "w_ml": 1606.0,
+   "reduction_pct": 49.42
+  },
+  {
+   "item": "Curd Rice",
+   "w_base": 2497,
+   "w_ml": 1411.0,
+   "reduction_pct": 43.49
+  },
+  {
+   "item": "Dosa",
+   "w_base": 3806,
+   "w_ml": 1800.0,
+   "reduction_pct": 52.71
+  },
+  {
+   "item": "Fried Rice",
+   "w_base": 2959,
+   "w_ml": 1341.0,
+   "reduction_pct": 54.68
+  },
+  {
+   "item": "Idli",
+   "w_base": 4768,
+   "w_ml": 2110.0,
+   "reduction_pct": 55.75
+  },
+  {
+   "item": "Samosa",
+   "w_base": 3614,
+   "w_ml": 1701.0,
+   "reduction_pct": 52.93
+  },
+  {
+   "item": "Veg Biryani",
+   "w_base": 4174,
+   "w_ml": 2015.0,
+   "reduction_pct": 51.72
+  }
+ ],
+ "importance": {
+  "prepared_qty": 0.3525,
+  "expected_footfall": 0.3485,
+  "is_holiday": 0.1015,
+  "roll7_sold": 0.0377,
+  "roll7_waste": 0.0327,
+  "day_of_week": 0.0189,
+  "temperature": 0.0184,
+  "lag1_sold": 0.0179,
+  "lag1_waste": 0.0153,
+  "is_event": 0.0146
+ },
+ "overall_waste_pct": 18.942826529958968,
+ "total_waste": 156818,
+ "total_prepared": 827849
+}

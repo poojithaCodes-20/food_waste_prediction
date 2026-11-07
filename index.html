@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Food Waste Prediction and Reduction System</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header><h1>Food Waste Prediction and Reduction System</h1><p>Plan today's preparation with machine-learning forecasts</p></header>
+<main>
+ <section class="card">
+  <h2>Preparation plan</h2>
+  <div class="grid">
+   <label>Food item<select id="item">{% for i in items %}<option>{{ i }}</option>{% endfor %}</select></label>
+   <label>Date<input type="date" id="date" value="2026-01-05"></label>
+   <label>Temperature (°C)<input type="number" id="temperature" value="27" step="0.1"></label>
+   <label>Expected footfall<input type="number" id="expected_footfall" value="650"></label>
+   <label>Planned quantity (servings)<input type="number" id="planned_qty" value="220"></label>
+   <label>Rain<select id="rain"><option value="0">No</option><option value="1">Yes</option></select></label>
+   <label>Holiday<select id="is_holiday"><option value="0">No</option><option value="1">Yes</option></select></label>
+   <label>Special event<select id="is_event"><option value="0">No</option><option value="1">Yes</option></select></label>
+  </div>
+  <button id="go">Predict waste</button>
+  <p id="error" class="error"></p>
+ </section>
+ <section class="card" id="result" hidden>
+  <h2>Prediction result</h2>
+  <div class="tiles">
+   <div class="tile"><span>Predicted waste</span><b id="r_waste"></b></div>
+   <div class="tile"><span>Predicted demand</span><b id="r_demand"></b></div>
+   <div class="tile"><span>Recommended quantity</span><b id="r_rec"></b></div>
+   <div class="tile"><span>Waste risk</span><b id="r_risk"></b></div>
+  </div>
+  <p id="r_msg"></p>
+ </section>
+ <section class="card">
+  <h2>Recent predictions</h2>
+  <table id="hist"><thead><tr><th>Item</th><th>Date</th><th>Planned</th><th>Predicted waste</th><th>Recommended</th><th>Risk</th></tr></thead><tbody></tbody></table>
+ </section>
+</main>
+<script src="/static/app.js"></script>
+</body></html>

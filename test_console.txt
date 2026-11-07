@@ -1,0 +1,16 @@
+TC1: Database created and loaded from dataset                -> 8 items, 5848 sales rows [Pass]
+TC2: Home page loads                                         -> HTTP 200 [Pass]
+TC3: Valid request returns a prediction                      -> HTTP 200, waste=47.2 [Pass]
+TC4: Recommended quantity is a positive integer              -> 143 servings [Pass]
+TC5: Risk level is Low, Medium or High                       -> High [Pass]
+TC6: Missing field is rejected                               -> HTTP 400 [Pass]
+TC7: Unknown food item is rejected                           -> HTTP 400 [Pass]
+TC8: Negative quantity is rejected                           -> HTTP 400 [Pass]
+TC9: Prediction is stored and listed in history              -> 1 record stored [Pass]
+TC10: Larger planned quantity gives higher predicted waste    -> 102.7 vs 36.1 [Pass]
+TC11: Prediction response time below 1 second                 -> 14 ms [Pass]
+TC12: Waste model R2 on unseen test period at least 0.60      -> R2 = 0.715 [Pass]
+TC13: Model-based plan wastes less than current practice      -> 15072 vs 31282 servings [Pass]
+TC14: Demand fulfilled stays at or above 95%                  -> 98.6% [Pass]
+
+14 of 14 test cases passed

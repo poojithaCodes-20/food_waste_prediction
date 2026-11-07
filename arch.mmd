@@ -1,0 +1,13 @@
+flowchart TB
+    A["Historical data<br/>sales, inventory, weather, events"] --> B["Data preprocessing<br/>Pandas, NumPy"]
+    B --> C["Feature engineering<br/>lag and 7-day average features"]
+    C --> D["Model training<br/>Scikit-learn"]
+    D --> E["Waste prediction model"]
+    D --> F["Demand prediction model"]
+    B --> G[("Database<br/>MySQL / MongoDB")]
+    E --> H["Flask web service"]
+    F --> H
+    G <--> H
+    H --> I["Web interface<br/>HTML, CSS, JavaScript"]
+    I --> J["Manager: waste forecast,<br/>risk level, recommended quantity"]
+    B --> K["Visualisation<br/>Matplotlib, Seaborn"]

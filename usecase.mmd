@@ -1,0 +1,21 @@
+flowchart LR
+    M(["Kitchen Manager"])
+    S(["Store Staff"])
+    A(["Administrator"])
+    subgraph SYS["Food Waste Prediction and Reduction System"]
+        U1(["Enter daily plan and conditions"])
+        U2(["View predicted waste and risk"])
+        U3(["View recommended quantity"])
+        U4(["Record sales and waste"])
+        U5(["View prediction history"])
+        U6(["Upload data and retrain models"])
+        U7(["View analysis charts"])
+    end
+    M --- U1
+    M --- U2
+    M --- U3
+    M --- U5
+    S --- U4
+    A --- U6
+    A --- U7
+    M --- U7

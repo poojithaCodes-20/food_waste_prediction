@@ -1,0 +1,43 @@
+classDiagram
+    class DataProcessor {
+        +load_csv(path)
+        +clean(df)
+        +add_lag_features(df)
+        +split_by_date(df)
+    }
+    class WasteModel {
+        -model
+        -features
+        +train(X, y)
+        +predict(X) float
+        +evaluate(X, y) dict
+    }
+    class DemandModel {
+        -model
+        -features
+        +train(X, y)
+        +predict(X) float
+    }
+    class Recommender {
+        -buffer
+        +recommend(demand) int
+        +risk_level(waste_pct) str
+    }
+    class Database {
+        +init_db()
+        +get_history(item, date)
+        +save_prediction(record)
+        +save_sales(record)
+    }
+    class FlaskApp {
+        +index()
+        +predict()
+        +history()
+        +summary()
+    }
+    DataProcessor --> WasteModel : supplies data
+    DataProcessor --> DemandModel : supplies data
+    FlaskApp --> WasteModel : uses
+    FlaskApp --> DemandModel : uses
+    FlaskApp --> Recommender : uses
+    FlaskApp --> Database : reads and writes

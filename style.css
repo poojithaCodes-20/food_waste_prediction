@@ -1,0 +1,17 @@
+*{box-sizing:border-box}body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f3f6f4;color:#1f2d27}
+header{background:linear-gradient(90deg,#1e7b4f,#2fa36b);color:#fff;padding:22px 32px}
+header h1{margin:0;font-size:26px}header p{margin:4px 0 0;opacity:.9}
+main{max-width:980px;margin:22px auto;padding:0 16px}
+.card{background:#fff;border-radius:10px;padding:18px 22px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+h2{margin:0 0 12px;font-size:19px;color:#1e7b4f}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+label{display:flex;flex-direction:column;font-size:13px;gap:4px}
+input,select{padding:8px;border:1px solid #bcc8c1;border-radius:6px;font-size:14px}
+button{margin-top:14px;background:#1e7b4f;color:#fff;border:0;padding:10px 24px;border-radius:6px;font-size:15px;cursor:pointer}
+button:hover{background:#17623f}.error{color:#c0392b;margin:8px 0 0}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tile{background:#eef6f1;border-radius:8px;padding:12px;text-align:center}
+.tile span{display:block;font-size:12px;color:#51655b}.tile b{font-size:22px}
+.risk-Low{color:#1e8449}.risk-Medium{color:#d68910}.risk-High{color:#c0392b}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:7px;border-bottom:1px solid #e0e6e2;text-align:left}
+th{background:#eef6f1}

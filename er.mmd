@@ -1,0 +1,35 @@
+erDiagram
+    FOOD_ITEMS ||--o{ SALES : has
+    FOOD_ITEMS ||--o{ INVENTORY : has
+    FOOD_ITEMS ||--o{ PREDICTIONS : has
+    FOOD_ITEMS {
+        int item_id PK
+        string item_name
+        float unit_cost
+        float price
+    }
+    SALES {
+        int sale_id PK
+        int item_id FK
+        date sale_date
+        int prepared_qty
+        int sold_qty
+        int waste_qty
+    }
+    INVENTORY {
+        int stock_id PK
+        int item_id FK
+        date stock_date
+        int opening_stock
+        int closing_stock
+    }
+    PREDICTIONS {
+        int prediction_id PK
+        int item_id FK
+        date target_date
+        int planned_qty
+        float predicted_waste
+        float predicted_demand
+        int recommended_qty
+        string risk_level
+    }

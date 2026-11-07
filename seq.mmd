@@ -1,0 +1,17 @@
+sequenceDiagram
+    actor M as Manager
+    participant UI as Web Interface
+    participant API as Flask API
+    participant DB as Database
+    participant ML as ML Models
+    M->>UI: Enter item, date, weather, footfall, planned quantity
+    UI->>API: POST /api/predict (JSON)
+    API->>API: Validate input
+    API->>DB: Read last 7 days of sales for the item
+    DB-->>API: Sold and wasted quantities
+    API->>ML: Feature vector
+    ML-->>API: Predicted waste and predicted demand
+    API->>API: Compute recommended quantity and risk level
+    API->>DB: Store prediction
+    API-->>UI: JSON result
+    UI-->>M: Show waste, risk and recommended quantity
